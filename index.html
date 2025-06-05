@@ -6,153 +6,158 @@
   <title>Portafolio - Universidad Peruana Los Andes</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    :root {
+      --bg: #0e0e17;
+      --text: #f4f4f4;
+      --muted: #b0b0b0;
+      --primary: #ff6b6b;
+      --secondary: #5f27cd;
+      --accent: #1dd1a1;
+      --hover-bg: rgba(255, 255, 255, 0.05);
+    }
 
-  :root {
-    --primary: #2563eb;       /* Azul vivo */
-    --secondary: #fbbf24;     /* Amarillo dorado */
-    --accent: #0ea5e9;        /* Celeste */
-    --bg-dark: #0f172a;       /* Fondo oscuro profesional */
-    --bg-gradient: linear-gradient(135deg, #1e293b, #0f172a);
-    --card-bg: #1e293b;       /* Fondo de tarjetas oscuro */
-    --text-light: #f1f5f9;
-    --text-muted: #94a3b8;
-    --white: #ffffff;
-  }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg-gradient);
-    color: var(--text-light);
-  }
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
 
-  header {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: white;
-    padding: 4rem 1rem;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  header h1 {
-    font-size: 3.2rem;
-    margin: 0;
-    font-weight: 700;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  header p {
-    margin-top: 1rem;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #e2e8f0;
-  }
-
-  .container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 3rem 1rem;
-  }
-
-  .week {
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    border-radius: 20px;
-    background: var(--card-bg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-
-  .week:hover {
-    transform: scale(1.015);
-  }
-
-  .week h2 {
-    margin-top: 0;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--secondary);
-    border-left: 6px solid var(--primary);
-    padding-left: 1rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .tasks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .task {
-    flex: 1 1 300px;
-    background: #334155;
-    border: 1px solid #475569;
-    border-radius: 16px;
-    padding: 1.8rem;
-    text-align: left;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-
-  .task:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  }
-
-  .task h3 {
-    margin-bottom: 0.6rem;
-    font-size: 1.25rem;
-    color: var(--accent);
-    font-weight: 600;
-  }
-
-  .task p {
-    color: var(--text-muted);
-    font-size: 0.98rem;
-    line-height: 1.6;
-  }
-
-  .task a {
-    display: inline-block;
-    margin-top: 1rem;
-    background: var(--primary);
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.6rem 1.4rem;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-  }
-
-  .task a:hover {
-    background: var(--secondary);
-    color: var(--bg-dark);
-  }
-
-  footer {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: #0c1121;
-    color: #94a3b8;
-    font-size: 0.95rem;
-    margin-top: 4rem;
-  }
-
-  @media (max-width: 768px) {
     header h1 {
-      font-size: 2.4rem;
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 3rem 2rem;
+    }
+
+    .week {
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, #2e2e48, #1e1e35);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
     .week h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
     }
-  }
-</style>
 
+    .tasks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
 
+    .task {
+      position: relative;
+      flex: 1 1 280px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      color: white;
+      cursor: pointer;
+    }
+
+    .task:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .task h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .task p {
+      font-size: 0.95rem;
+      color: #eee;
+    }
+
+    .task a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .task a:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* Mostrar nombre al pasar el cursor */
+    .task::after {
+      content: attr(data-title);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      border-radius: 16px;
+    }
+
+    .task:hover::after {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .week h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -161,412 +166,340 @@
   </header>
 
   <div class="container">
-    <!-- Semana 1 -->
+     <!-- Semana 1 -->
     <div class="week">
       <h2>Semana 1</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: Introducción">
           <h3>Tarea 1</h3>
-          <p>Descripción breve.</p>
-          <a href="https://github.com/usuario/tarea1" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Otra breve descripción.</p>
-          <a href="https://github.com/usuario/tarea2" target="_blank">Ver Tarea</a>
+          <p>Resumen.</p>
+          <a href="https://www.canva.com/design/DAGjiKd0-sk/zCc1P2YhFDLT1x36MexOTQ/edit" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
-
     <!-- Semana 2 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 2</h2>
       <div class="tasks">
-        <div class="task">
-          <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <p>Entidad-Relación.</p>
+          <a href="https://www.canva.com/design/DAGkQdkGuQs/aUuG-_74GBM5Ga4p23c9RQ/edit" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
 
     <!-- Semana 3 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 3</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <p>Cuadro Excel.</p>
+          <a href="https://docs.google.com/spreadsheets/d/19Qr7g58JxMMdpPTMoHw_abfrJHLVBZlIbRxqOAihu94/edit?usp=sharing" target="_blank" class="btn visualizar">Ver Tarea </a>
         </div>
       </div>
     </div>
 
     <!-- Semana 4 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 4</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <p>Modelo Relacional.</p>
+          <a href="https://www.canva.com/design/DAGlaaII4DM/XHkOCWa0le1Icg5zm1eUyw/edit?utm_content=DAGlaaII4DM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
 
     <!-- Semana 5 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 5</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <p>Manual Azure.</p>
+          <a href="https://www.canva.com/design/DAGmI5DwbhE/MMAb8bS5JNprV8oiZ60x7Q/edit?utm_content=DAGmI5DwbhE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
-
+    
     <!-- Semana 6 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 6</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Semana 7 -->
-    <div class="week" style="border-left-color: var(--secondary);">
-      <h2>Semana 7</h2>
-      <div class="tasks">
-        <div class="task">
-          <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <p>Conexion Base de Datos con Azure.</p>
+          <a href="https://www.canva.com/design/DAGmtFxvSR4/iLHuvsn-hX20zQhUvx0gNw/edit?utm_content=DAGmtFxvSR4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
 
     <!-- Semana 8 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 8</h2>
       <div class="tasks">
-        <div class="task">
-          <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
+        <div class="task" data-title="Tarea 1: HTML y CSS">
+          <h3>Examen 1</h3>
+          <p>Resolucion Sesion 1.</p>
+          <a href="https://docs.google.com/document/d/1KSJaKJp_YtHZIcGSu5rjezlFlstgNaF_weAFm2wE8P0/edit?usp=sharing" target="_blank">Ver Examen</a>
+          <a href="https://docs.google.com/document/d/1KSJaKJp_YtHZIcGSu5rjezlFlstgNaF_weAFm2wE8P0/export?format=pdf" class="btn descargar" download="Examen 1.pdf">Descargar Examen</a>
         </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
+        <div class="task" data-title="Tarea 2: Flexbox">
+          <h3>Examen 2</h3>
+          <p>Resolucion Sesion 2.</p>
+          <a href="https://docs.google.com/document/d/1nANYbj0FIODmVc-RNSFt_APv5-uoQh_vg9as98lAqug/edit?usp=sharing" target="_blank" class="btn visualizar">Visualizar Examen</a>
+          <a href="https://docs.google.com/document/d/1nANYbj0FIODmVc-RNSFt_APv5-uoQh_vg9as98lAqug/export?format=pdf" class="btn descargar" download="Examen 2.pdf">Descargar Examen</a>
         </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+        <div class="task" data-title="Tarea 3: Grid Layout">
+          <h3>Examen 3</h3>
+          <p>Resolucion Sesion 3.</p>
+          <a href="https://docs.google.com/document/d/15TPD5nctazxfzaTVZ8UoubnRGL1ScCT2O-pQSksbKH8/edit?usp=sharing" target="_blank" class="btn visualizar">Visualizar Examen</a>
+          <a href="https://docs.google.com/document/d/15TPD5nctazxfzaTVZ8UoubnRGL1ScCT2O-pQSksbKH8/export?format=pdf" class="btn descargar" download="Examen 3.pdf">Descargar Examen</a>
+        </div>
+        <div class="task" data-title="Tarea 3: Grid Layout">
+          <h3>Examen 4</h3>
+          <p>Resolucion Sesion 4.</p>
+          <a href="https://docs.google.com/document/d/1SOMlWEDzLbafIjfxANW773pA6GbIZJ9BmXJe5h1WM94/edit?usp=sharing" target="_blank" class="btn visualizar">Visualizar Examen</a>
+          <a href="https://docs.google.com/document/d/1SOMlWEDzLbafIjfxANW773pA6GbIZJ9BmXJe5h1WM94/export?format=pdf" class="btn descargar" download="Examen 4.pdf">Descargar Examen</a>
+        </div>
+        <div class="task" data-title="Tarea 3: Grid Layout">
+          <h3>Examen 5</h3>
+          <p>Resolucion Sesion 5.</p>
+          <a href="https://docs.google.com/document/d/1dcHjKpMEe1Yq08C7f9fG6GF4wuaaPfO-JL9FsMVmeto/edit?usp=sharing" target="_blank" class="btn visualizar">Visualizar Examen</a>
+          <a href="https://docs.google.com/document/d/1dcHjKpMEe1Yq08C7f9fG6GF4wuaaPfO-JL9FsMVmeto/export?format=pdf" class="btn descargar" download="Examen 5.pdf">Descargar Examen</a>
+        </div>
+        <div class="task" data-title="Tarea 3: Grid Layout">
+          <h3>Examen 6</h3>
+          <p>Resolucion Sesion 6.</p>
+          <a href="https://docs.google.com/document/d/1sUH71rItp_7m47XSEQb_tBnjPYbpwAD0WL2RVRpS_k0/edit?usp=sharing" target="_blank" class="btn visualizar">Visualizar Examen</a>
+          <a href="https://docs.google.com/document/d/1sUH71rItp_7m47XSEQb_tBnjPYbpwAD0WL2RVRpS_k0/export?format=pdf" class="btn descargar" download="Examen 6.pdf">Descargar Examen</a>
         </div>
       </div>
     </div>
-
-    <!-- Semana 9 -->
-    <div class="week" style="border-left-color: var(--secondary);">
-      <h2>Semana 9</h2>
-      <div class="tasks">
-        <div class="task">
-          <h3>Tarea 1</h3>
-          <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
-        </div>
-      </div>
-    </div>
+    
     <!-- Semana 10 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 10</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
+          <a href="https://docs.google.com/document/d/1CgywDGMmjjSq1f2CA-IVmS17zLnoyQAvDntl5D_e9Gw/edit?usp=sharing" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <a href="https://docs.google.com/document/d/1Yh0zzO8U9HmFw367tb287oxGXrCpuaaI-OUbhNafVwo/edit?usp=sharing" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+
     <!-- Semana 11 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 11</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
-          <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 2</h3>
-          <p>Resumen de la tarea.</p>
-          <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
-        </div>
-        <div class="task">
-          <h3>Tarea 3</h3>
-          <p>Detalles interesantes.</p>
-          <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
+          <a href="https://docs.google.com/document/d/1lqCFAgWFLRE8I_IkPhn2KkLvadkxEQfMq0ogc5wyuXM/edit?usp=sharing" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 12 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 12</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 13 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 13</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 14 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 14</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 15 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 15</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 16 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 16</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 17 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 17</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 18 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 18</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
+    
     <!-- Semana 19 -->
-    <div class="week" style="border-left-color: var(--secondary);">
+    <div class="week">
       <h2>Semana 19</h2>
       <div class="tasks">
-        <div class="task">
+        <div class="task" data-title="Tarea 1: HTML y CSS">
           <h3>Tarea 1</h3>
           <p>Descripción importante.</p>
           <a href="https://github.com/usuario/tarea3" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 2: Flexbox">
           <h3>Tarea 2</h3>
           <p>Resumen de la tarea.</p>
           <a href="https://github.com/usuario/tarea4" target="_blank">Ver Tarea</a>
         </div>
-        <div class="task">
+        <div class="task" data-title="Tarea 3: Grid Layout">
           <h3>Tarea 3</h3>
           <p>Detalles interesantes.</p>
           <a href="https://github.com/usuario/tarea5" target="_blank">Ver Tarea</a>
         </div>
       </div>
     </div>
-  </div>
 
   <footer>
-    <p>&copy; 2025 Anderson Mayta - Todos los derechos reservados</p>
-  </footer>
+        <div class="container">
+            <h3>Contáctame</h3>
+            <p>Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de mis redes sociales.</p>
+            <div class="redes">
+                <a href="https://wa.me/907986144" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/ander_mayta?igsh=MXQ1d3kwODRuc3hvYQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/ander_mayt44238?t=jY3QjLEX5wFoR9Y2QGVyWg&s=09" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.tiktok.com/@iam.anders26?_t=ZM-8w4uqvQOXeH&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/ander.mayta.2025?mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Ander Mayta. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
