@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Portafolio Adaptativo - Anderson Mayta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Universidad Peruana Los Andes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      /* Variables CSS */
+        /* Variables CSS */
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -494,338 +495,380 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Universidad Peruana Los Andes</h1>
-        <p>Portafolio Profesional - Anderson Mayta</p>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-badge">
+                <i class="fas fa-graduation-cap"></i>
+                Portafolio Académico
+            </div>
+            <h1>Universidad Peruana Los Andes</h1>
+            <p>Anderson Mayta - Ingeniería de Sistemas</p>
+        </div>
     </header>
 
     <div class="container">
-        <div class="week">
-            <h2>Semana 1</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Resumen de Conceptos">
-                    <h3>Tarea 1</h3>
-                    <p>Documento resumen de los conceptos fundamentales introductorios al curso.</p>
-                    <div class="actions">
-                        <a href="https://www.canva.com/design/DAGjiKd0-sk/zCc1P2YhFDLT1x36MexOTQ/edit" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Navegación de semanas -->
+        <nav class="week-nav" aria-label="Navegación por semanas">
+            <a href="#semana-1" class="week-nav-item">Semana 1</a>
+            <a href="#semana-2" class="week-nav-item">Semana 2</a>
+            <a href="#semana-3" class="week-nav-item">Semana 3</a>
+            <a href="#semana-4" class="week-nav-item">Semana 4</a>
+            <a href="#semana-5" class="week-nav-item">Semana 5</a>
+            <a href="#semana-6" class="week-nav-item">Semana 6</a>
+            <a href="#semana-8" class="week-nav-item">Semana 8</a>
+            <a href="#semana-10" class="week-nav-item">Semana 10</a>
+            <a href="#semana-11" class="week-nav-item">Semana 11</a>
+            <a href="#semana-12" class="week-nav-item">Semana 12</a>
+        </nav>
 
-        <div class="week">
-            <h2>Semana 2</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Modelo Entidad-Relación">
-                    <h3>Tarea 2</h3>
-                    <p>Elaboración de un modelo Entidad-Relación detallado para un sistema de base de datos.</p>
-                    <div class="actions">
-                        <a href="https://www.canva.com/design/DAGkQdkGuQs/aUuG-_74GBM5Ga4p23c9RQ/edit" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 1 -->
+        <section class="week" id="semana-1">
+            <div class="week-header">
+                <div class="week-number">1</div>
+                <h2>Semana 1</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Resumen Conceptual</h3>
+                            <span class="task-type">Documentación</span>
+                        </div>
+                    </div>
+                    <p>Elaboración de resumen sobre conceptos fundamentales de bases de datos y modelado de datos.</p>
+                    <div class="task-actions">
+                        <a href="https://www.canva.com/design/DAGjiKd0-sk/zCc1P2YhFDLT1x36MexOTQ/edit" target="_blank" class="task-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Tarea
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <div class="week">
-            <h2>Semana 3</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Análisis en Cuadro Excel">
-                    <h3>Tarea 1</h3>
-                    <p>Desarrollo de un cuadro comparativo y analítico utilizando hojas de cálculo Excel.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/spreadsheets/d/19Qr7g58JxMMdpPTMoHw_abfrJHLVBZlIbRxqOAihu94/edit?usp=sharing" target="_blank" class="btn visualizar"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 2 -->
+        <section class="week" id="semana-2">
+            <div class="week-header">
+                <div class="week-number">2</div>
+                <h2>Semana 2</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Diagrama Entidad-Relación</h3>
+                            <span class="task-type">Modelado</span>
+                        </div>
+                    </div>
+                    <p>Diseño y desarrollo de diagrama entidad-relación para sistema de información empresarial.</p>
+                    <div class="task-actions">
+                        <a href="https://www.canva.com/design/DAGkQdkGuQs/aUuG-_74GBM5Ga4p23c9RQ/edit" target="_blank" class="task-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Tarea
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <div class="week">
-            <h2>Semana 4</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Diseño de Modelo Relacional">
-                    <h3>Tarea 1</h3>
-                    <p>Conversión y diseño de un modelo relacional optimizado a partir de un ERD.</p>
-                    <div class="actions">
-                        <a href="https://www.canva.com/design/DAGlaaII4DM/XHkOCWa0le1Icg5zm1eUyw/edit?utm_content=DAGlaaII4DM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 3 -->
+        <section class="week" id="semana-3">
+            <div class="week-header">
+                <div class="week-number">3</div>
+                <h2>Semana 3</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Análisis de Datos en Excel</h3>
+                            <span class="task-type">Análisis</span>
+                        </div>
+                    </div>
+                    <p>Creación de cuadros analíticos y procesamiento de datos mediante Microsoft Excel.</p>
+                    <div class="task-actions">
+                        <a href="https://docs.google.com/spreadsheets/d/19Qr7g58JxMMdpPTMoHw_abfrJHLVBZlIbRxqOAihu94/edit?usp=sharing" target="_blank" class="task-btn">
+                            <i class="fas fa-table"></i>
+                            Ver Análisis
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <div class="week">
-            <h2>Semana 5</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Manual de Implementación en Azure">
-                    <h3>Tarea 1</h3>
-                    <p>Guía detallada para la implementación y gestión de recursos en Microsoft Azure.</p>
-                    <div class="actions">
-                        <a href="https://www.canva.com/design/DAGmI5DwbhE/MMAb8bS5JNprV8oiZ60x7Q/edit?utm_content=DAGmI5DwbhE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 4 -->
+        <section class="week" id="semana-4">
+            <div class="week-header">
+                <div class="week-number">4</div>
+                <h2>Semana 4</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Modelo Relacional</h3>
+                            <span class="task-type">Diseño DB</span>
+                        </div>
+                    </div>
+                    <p>Transformación del modelo conceptual a modelo relacional con normalización de datos.</p>
+                    <div class="task-actions">
+                        <a href="https://www.canva.com/design/DAGlaaII4DM/XHkOCWa0le1Icg5zm1eUyw/edit?utm_content=DAGlaaII4DM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="task-btn">
+                            <i class="fas fa-database"></i>
+                            Ver Modelo
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <div class="week">
-            <h2>Semana 6</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Conexión de Base de Datos con Azure">
-                    <h3>Tarea 1</h3>
-                    <p>Procedimiento paso a paso para establecer la conexión de una base de datos con Azure SQL Database.</p>
-                    <div class="actions">
-                        <a href="https://www.canva.com/design/DAGmtFxvSR4/iLHuvsn-hX20zQhUvx0gNw/edit?utm_content=DAGmtFxvSR4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 5 -->
+        <section class="week" id="semana-5">
+            <div class="week-header">
+                <div class="week-number">5</div>
+                <h2>Semana 5</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Manual de Azure</h3>
+                            <span class="task-type">Cloud</span>
+                        </div>
+                    </div>
+                    <p>Guía completa para la implementación y gestión de servicios en Microsoft Azure.</p>
+                    <div class="task-actions">
+                        <a href="https://www.canva.com/design/DAGmI5DwbhE/MMAb8bS5JNprV8oiZ60x7Q/edit?utm_content=DAGmI5DwbhE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="task-btn">
+                            <i class="fas fa-cloud"></i>
+                            Ver Manual
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <div class="week">
-            <h2>Semana 8 - Exámenes Parciales</h2>
-            <div class="tasks">
-                <div class="task" data-title="Examen 1: Resolución Sesión 1">
-                    <h3>Examen 1</h3>
-                    <p>Solución detallada de los problemas y ejercicios de la Sesión 1.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1KSJaKJp_YtHZIcGSu5rjezlFlstgNaF_weAFm2wE8P0/edit?usp=sharing" target="_blank"><i class="fas fa-eye"></i> Ver Examen</a>
-                        <a href="https://docs.google.com/document/d/1KSJaKJp_YtHZIcGSu5rjezlFlstgNaF_weAFm2wE8P0/export?format=pdf" class="btn descargar" download="Examen_1.pdf"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Examen 2: Resolución Sesión 2">
-                    <h3>Examen 2</h3>
-                    <p>Análisis y resolución de los problemas propuestos en la Sesión 2 del curso.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1nANYbj0FIODmVc-RNSFt_APv5-uoQh_vg9as98lAqug/edit?usp=sharing" target="_blank" class="btn visualizar"><i class="fas fa-eye"></i> Ver Examen</a>
-                        <a href="https://docs.google.com/document/d/1nANYbj0FIODmVc-RNSFt_APv5-uoQh_vg9as98lAqug/export?format=pdf" class="btn descargar" download="Examen_2.pdf"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Examen 3: Resolución Sesión 3">
-                    <h3>Examen 3</h3>
-                    <p>Demostración de conocimientos y habilidades en la resolución de la Sesión 3.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/15TPD5nctazxfzaTVZ8UoubnRGL1ScCT2O-pQSksbKH8/edit?usp=sharing" target="_blank" class="btn visualizar"><i class="fas fa-eye"></i> Ver Examen</a>
-                        <a href="https://docs.google.com/document/d/15TPD5nctazxfzaTVZ8UoubnRGL1ScCT2O-pQSksbKH8/export?format=pdf" class="btn descargar" download="Examen_3.pdf"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Examen 4: Resolución Sesión 4">
-                    <h3>Examen 4</h3>
-                    <p>Respuestas completas a los desafíos y preguntas de la Sesión 4.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1SOMlWEDzLbafIjfxANW773pA6GbIZJ9BmXJe5h1WM94/edit?usp=sharing" target="_blank" class="btn visualizar"><i class="fas fa-eye"></i> Ver Examen</a>
-                        <a href="https://docs.google.com/document/d/1SOMlWEDzLbafIjfxANW773pA6GbIZJ9BmXJe5h1WM94/export?format=pdf" class="btn descargar" download="Examen_4.pdf"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Examen 5: Resolución Sesión 5">
-                    <h3>Examen 5</h3>
-                    <p>Resolución de problemas prácticos y teóricos abordados en la Sesión 5.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1dcHjKpMEe1Yq08C7f9fG6GF4wuaaPfO-JL9FsMVmeto/edit?usp=sharing" target="_blank" class="btn visualizar"><i class="fas fa-eye"></i> Ver Examen</a>
-                        <a href="https://docs.google.com/document/d/1dcHjKpMEe1Yq08C7f9fG6GF4wuaaPfO-JL9FsMVmeto/export?format=pdf" class="btn descargar" download="Examen_5.pdf"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Examen 6: Resolución Sesión 6">
-                    <h3>Examen 6</h3>
-                    <p>Documento con las soluciones a las evaluaciones de la Sesión 6.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1sUH71rItp_7m47XSEQb_tBnjPYbpwAD0WL2RVRpS_k0/edit?usp=sharing" target="_blank" class="btn visualizar"><i class="fas fa-eye"></i> Ver Examen</a>
-                        <a href="https://docs.google.com/document/d/1sUH71rItp_7m47XSEQb_tBnjPYbpwAD0WL2RVRpS_k0/export?format=pdf" class="btn descargar" download="Examen_6.pdf"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
+        <!-- Semana 6 -->
+        <section class="week" id="semana-6">
+            <div class="week-header">
+                <div class="week-number">6</div>
+                <h2>Semana 6</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Conexión BD con Azure</h3>
+                            <span class="task-type">Integración</span>
+                        </div>
+                    </div>
+                    <p>Implementación de conexión entre base de datos local y servicios en la nube de Azure.</p>
+                    <div class="task-actions">
+                        <a href="https://www.canva.com/design/DAGmtFxvSR4/iLHuvsn-hX20zQhUvx0gNw/edit?utm_content=DAGmtFxvSR4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="task-btn">
+                            <i class="fas fa-plug"></i>
+                            Ver Integración
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Semana 8 -->
+       <section class="week" id="semana-8">
+          <div class="week-header">
+              <div class="week-number">8</div>
+              <h2>Semana 8 - Evaluaciones</h2>
+         </div>
+         <div class="tasks">
+            <article class="task">
+                <div class="task-header">
+                    <div>
+                        <h3>Examen Parcial 1</h3>
+                        <span class="task-type">Evaluación</span>
+                    </div>
+                </div>
+                <p>Resolución de evaluación teórico-práctica sobre fundamentos de bases de datos.</p>
+                <div class="task-actions">
+                    <a href="https://docs.google.com/document/d/1KSJaKJp_YtHZIcGSu5rjezlFlstgNaF_weAFm2wE8P0/edit?usp=sharing" target="_blank" class="task-btn">
+                        <i class="fas fa-eye"></i>
+                        Ver Resolución
+                    </a>
+                    <a href="https://docs.google.com/document/d/1KSJaKJp_YtHZIcGSu5rjezlFlstgNaF_weAFm2wE8P0/export?format=pdf" class="task-btn secondary" download="Examen_1.pdf">
+                        <i class="fas fa-download"></i>
+                        Descargar PDF
+                    </a>
+                </div>
+            </article>
 
-        <div class="week">
-            <h2>Semana 10</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Consultas SQL Avanzadas I">
-                    <h3>Tarea 1</h3>
-                    <p>Ejercicios prácticos sobre consultas SQL avanzadas para manipulación de datos.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1CgywDGMmjjSq1f2CA-IVmS17zLnoyQAvDntl5D_e9Gw/edit?usp=sharing" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
+            <article class="task">
+                <div class="task-header">
+                    <div>
+                        <h3>Examen Parcial 2</h3>
+                        <span class="task-type">Evaluación</span>
                     </div>
                 </div>
-                <div class="task" data-title="Tarea 2: Consultas SQL Avanzadas II">
-                    <h3>Tarea 2</h3>
-                    <p>Profundización en la optimización y complejidad de consultas SQL.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1Yh0zzO8U9HmFw367tb287oxGXrCpuaaI-OUbhNafVwo/edit?usp=sharing" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
-                    </div>
+                <p>Evaluación práctica sobre modelado de datos y diseño de esquemas relacionales.</p>
+                <div class="task-actions">
+                    <a href="https://docs.google.com/document/d/1nANYbj0FIODmVc-RNSFt_APv5-uoQh_vg9as98lAqug/edit?usp=sharing" target="_blank" class="task-btn">
+                        <i class="fas fa-eye"></i>
+                        Ver Resolución
+                    </a>
+                    <a href="https://docs.google.com/document/d/1nANYbj0FIODmVc-RNSFt_APv5-uoQh_vg9as98lAqug/export?format=pdf" class="task-btn secondary" download="Examen_2.pdf">
+                        <i class="fas fa-download"></i>
+                        Descargar PDF
+                    </a>
                 </div>
-            </div>
-        </div>
+            </article>
 
-        <div class="week">
-            <h2>Semana 11</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Consultas de Gestión de Empleados">
-                    <h3>Tarea 1</h3>
-                    <p>Desarrollo de consultas SQL específicas para la administración de datos de empleados.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/1lqCFAgWFLRE8I_IkPhn2KkLvadkxEQfMq0ogc5wyuXM/edit?usp=sharing" target="_blank"><i class="fas fa-eye"></i> Ver Tarea</a>
+            <article class="task">
+                <div class="task-header">
+                    <div>
+                        <h3>Examen Parcial 3</h3>
+                        <span class="task-type">Evaluación</span>
                     </div>
                 </div>
-            </div>
+                <p>Resolución de casos prácticos sobre normalización y optimización de bases de datos.</p>
+                <div class="task-actions">
+                    <a href="https://docs.google.com/document/d/15TPD5nctazxfzaTVZ8UoubnRGL1ScCT2O-pQSksbKH8/edit?usp=sharing" target="_blank" class="task-btn">
+                        <i class="fas fa-eye"></i>
+                        Ver Resolución
+                    </a>
+                    <a href="https://docs.google.com/document/d/15TPD5nctazxfzaTVZ8UoubnRGL1ScCT2O-pQSksbKH8/export?format=pdf" class="task-btn secondary" download="Examen_3.pdf">
+                        <i class="fas fa-download"></i>
+                        Descargar PDF
+                    </a>
+                </div>
+            </article>
+
+            <article class="task">
+                <div class="task-header">
+                    <div>
+                        <h3>Examen Parcial 4</h3>
+                        <span class="task-type">Evaluación</span>
+                    </div>
+                </div>
+                <p>Evaluación sobre consultas SQL avanzadas y procedimientos almacenados.</p>
+                <div class="task-actions">
+                    <a href="https://docs.google.com/document/d/1SOMlWEDzLbafIjfxANW773pA6GbIZJ9BmXJe5h1WM94/edit?usp=sharing" target="_blank" class="task-btn">
+                        <i class="fas fa-eye"></i>
+                        Ver Resolución
+                    </a>
+                    <a href="https://docs.google.com/document/d/1SOMlWEDzLbafIjfxANW773pA6GbIZJ9BmXJe5h1WM94/export?format=pdf" class="task-btn secondary" download="Examen_4.pdf">
+                        <i class="fas fa-download"></i>
+                        Descargar PDF
+                    </a>
+                </div>
+            </article>
+
+            <article class="task">
+                <div class="task-header">
+                    <div>
+                        <h3>Examen Parcial 5</h3>
+                        <span class="task-type">Evaluación</span>
+                    </div>
+                </div>
+                <p>Resolución de problemas complejos de administración y seguridad en bases de datos.</p>
+                <div class="task-actions">
+                    <a href="https://docs.google.com/document/d/1dcHjKpMEe1Yq08C7f9fG6GF4wuaaPfO-JL9FsMVmeto/edit?usp=sharing" target="_blank" class="task-btn">
+                        <i class="fas fa-eye"></i>
+                        Ver Resolución
+                    </a>
+                    <a href="https://docs.google.com/document/d/1dcHjKpMEe1Yq08C7f9fG6GF4wuaaPfO-JL9FsMVmeto/export?format=pdf" class="task-btn secondary" download="Examen_5.pdf">
+                        <i class="fas fa-download"></i>
+                        Descargar PDF
+                    </a>
+                </div>
+            </article>
         </div>
+    </section>
         
-        <div class="week">
-            <h2>Semana 12</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Fundamentos de HTML y CSS">
-                    <h3>Tarea 1</h3>
-                    <p>Implementación de un diseño web básico utilizando los pilares de HTML y CSS.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea3" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Diseño Responsivo con Flexbox">
-                    <h3>Tarea 2</h3>
-                    <p>Creación de layouts flexibles y adaptables utilizando las propiedades de Flexbox.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea4" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Tarea 3: Estructuras Avanzadas con Grid Layout">
-                    <h3>Tarea 3</h3>
-                    <p>Desarrollo de diseños de página complejos y robustos con CSS Grid Layout.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea5" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 10 -->
+        <section class="week" id="semana-3">
+            <div class="week-header">
+                <div class="week-number">3</div>
+                <h2>Semana 10</h2>
             </div>
-        </div>
+            <div class="tasks">
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Tarea 1</h3>
+                            <span class="task-type">Análisis</span>
+                        </div>
+                    </div>
+                    <p>Ejercicios prácticos sobre consultas SQL avanzadas para manipulación de datos.</p>
+                    <div class="task-actions">
+                        <a href="https://docs.google.com/document/d/1CgywDGMmjjSq1f2CA-IVmS17zLnoyQAvDntl5D_e9Gw/edit?usp=sharing" target="_blank" class="task-btn">
+                            <i class="fas fa-table"></i>
+                            Ver Análisis
+                        </a>
+                    </div>
+                </article>
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Tarea 2</h3>
+                            <span class="task-type">Análisis</span>
+                        </div>
+                    </div>
+                    <p>Profundización en la optimización y complejidad de consultas SQL.</p>
+                    <div class="task-actions">
+                        <a href="https://docs.google.com/document/d/1Yh0zzO8U9HmFw367tb287oxGXrCpuaaI-OUbhNafVwo/edit?usp=sharing" target="_blank" class="task-btn">
+                            <i class="fas fa-table"></i>
+                            Ver Análisis
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <div class="week">
-            <h2>Semana 13</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Proyecto Integrador - Fase de Planificación">
-                    <h3>Tarea 1</h3>
-                    <p>Documentación y esquematización de la primera fase del proyecto integrador.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea6" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Prototipado y Diseño UX/UI">
-                    <h3>Tarea 2</h3>
-                    <p>Creación de prototipos interactivos y diseño de experiencia de usuario (UX/UI).</p>
-                    <div class="actions">
-                        <a href="https://www.figma.com/file/your-prototype" target="_blank"><i class="fab fa-figma"></i> Ver Tarea</a>
-                    </div>
-                </div>
+        <!-- Semana 11 -->
+        <section class="week" id="semana-4">
+            <div class="week-header">
+                <div class="week-number">4</div>
+                <h2>Semana 11</h2>
             </div>
-        </div>
-
-        <div class="week">
-            <h2>Semana 14</h2>
             <div class="tasks">
-                <div class="task" data-title="Tarea 1: Desarrollo Frontend Completo">
-                    <h3>Tarea 1</h3>
-                    <p>Construcción de la interfaz de usuario con frameworks modernos y mejores prácticas.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea7" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Tarea 1</h3>
+                            <span class="task-type">Diseño DB</span>
+                        </div>
                     </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Integración de API con Backend">
-                    <h3>Tarea 2</h3>
-                    <p>Implementación de la conexión y consumo de servicios de API RESTful.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea8" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
+                    <p>Desarrollo de consultas SQL específicas para la administración de datos de empleados.</p>
+                    <div class="task-actions">
+                        <a href="https://docs.google.com/document/d/1lqCFAgWFLRE8I_IkPhn2KkLvadkxEQfMq0ogc5wyuXM/edit?usp=sharing" target="_blank" class="task-btn">
+                            <i class="fas fa-database"></i>
+                            Ver Modelo
+                        </a>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
-
-        <div class="week">
-            <h2>Semana 15</h2>
+        </section>
+        
+        <!-- Semana 3 -->
+        <section class="week" id="semana-3">
+            <div class="week-header">
+                <div class="week-number">3</div>
+                <h2>Semana 3</h2>
+            </div>
             <div class="tasks">
-                <div class="task" data-title="Tarea 1: Desarrollo Backend Robusto">
-                    <h3>Tarea 1</h3>
-                    <p>Diseño y construcción de la lógica del servidor y la gestión de la base de datos.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea9" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
+                <article class="task">
+                    <div class="task-header">
+                        <div>
+                            <h3>Análisis de Datos en Excel</h3>
+                            <span class="task-type">Análisis</span>
+                        </div>
                     </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Implementación de Pruebas Unitarias">
-                    <h3>Tarea 2</h3>
-                    <p>Desarrollo y ejecución de pruebas unitarias para asegurar la calidad del código.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea10" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
+                    <p>Creación de cuadros analíticos y procesamiento de datos mediante Microsoft Excel.</p>
+                    <div class="task-actions">
+                        <a href="https://docs.google.com/spreadsheets/d/19Qr7g58JxMMdpPTMoHw_abfrJHLVBZlIbRxqOAihu94/edit?usp=sharing" target="_blank" class="task-btn">
+                            <i class="fas fa-table"></i>
+                            Ver Análisis
+                        </a>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
-
-        <div class="week">
-            <h2>Semana 16</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Pruebas de Integración y Sistema">
-                    <h3>Tarea 1</h3>
-                    <p>Realización de pruebas de integración y sistema para verificar el flujo completo de la aplicación.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea11" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Despliegue de Aplicaciones en la Nube">
-                    <h3>Tarea 2</h3>
-                    <p>Estrategias y ejecución del despliegue de aplicaciones en plataformas cloud.</p>
-                    <div class="actions">
-                        <a href="https://www.netlify.com/your-project" target="_blank"><i class="fas fa-cloud-upload-alt"></i> Ver Despliegue</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="week">
-            <h2>Semana 17</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Optimización de Rendimiento Web">
-                    <h3>Tarea 1</h3>
-                    <p>Técnicas y herramientas para mejorar la velocidad y eficiencia de aplicaciones web.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea12" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Implementación de Seguridad Web">
-                    <h3>Tarea 2</h3>
-                    <p>Medidas de seguridad esenciales para proteger aplicaciones y datos en línea.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea13" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="week">
-            <h2>Semana 18</h2>
-            <div class="tasks">
-                <div class="task" data-title="Tarea 1: Mantenimiento y Actualizaciones Contínuas">
-                    <h3>Tarea 1</h3>
-                    <p>Estrategias para el mantenimiento preventivo y las actualizaciones de software.</p>
-                    <div class="actions">
-                        <a href="https://github.com/usuario/tarea14" target="_blank"><i class="fab fa-github"></i> Ver Tarea</a>
-                    </div>
-                </div>
-                <div class="task" data-title="Tarea 2: Documentación Técnica y de Usuario">
-                    <h3>Tarea 2</h3>
-                    <p>Creación de documentación clara y completa para desarrolladores y usuarios finales.</p>
-                    <div class="actions">
-                        <a href="https://docs.google.com/document/d/your-documentation" target="_blank"><i class="fas fa-file-alt"></i> Ver Tarea</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="week">
-            <h2>Semana 19 - Proyecto Final del Curso</h2>
-            <div class="tasks">
-                <div class="task" data-title="Proyecto Final: Presentación y Defensa">
-                    <h3>Proyecto Final</h3>
-                    <p>Presentación integral y defensa del proyecto integrador desarrollado durante el curso.</p>
-                    <div class="actions">
-                        <a href="https://www.canva.com/design/your-final-project-presentation" target="_blank"><i class="fas fa-award"></i> Ver Proyecto</a>
-                        <a href="https://github.com/usuario/final-project" target="_blank" class="btn descargar"><i class="fab fa-github"></i> Código Fuente</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
+       
 
     <footer>
         <div class="container">
