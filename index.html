@@ -9,489 +9,568 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Variables CSS */
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #8b5cf6;
-            --accent: #06d6a0;
-            --bg-primary: #0f0f23;
-            --bg-secondary: #1a1a3e;
-            --bg-card: #252547;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --shadow-hover: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
-            --radius: 16px;
-            --radius-lg: 24px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Reset y base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* Header */
-        .header {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 4rem 2rem 6rem;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="%23ffffff" stop-opacity=".1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat;
-            background-size: cover;
-            opacity: 0.1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.02em;
-        }
-
-        .header p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            font-weight: 400;
-            color: #e2e8f0;
-            margin-bottom: 2rem;
-        }
-
-        .header-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #ffffff;
-        }
-
-        /* Container principal */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-        }
-
-        /* Navegación de semanas */
-        .week-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-            padding: 0 1rem;
-        }
-
-        .week-nav-item {
-            padding: 0.5rem 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .week-nav-item:hover,
-        .week-nav-item.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Secciones de semanas */
-        .week {
-            margin-bottom: 4rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .week:nth-child(even) {
-            animation-delay: 0.1s;
-        }
-
-        .week:nth-child(odd) {
-            animation-delay: 0.2s;
-        }
-
-        .week-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .week-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .week h2 {
-            font-size: clamp(1.8rem, 3vw, 2.2rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0;
-        }
-
-        /* Grid de tareas */
-        .tasks {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Tarjetas de tareas */
-        .task {
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            transition: var(--transition);
-            overflow: hidden;
-            cursor: pointer;
-            group: task;
-        }
-
-        .task::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .task:hover::before {
-            transform: scaleX(1);
-        }
-
-        .task:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-
-        .task-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-
-        .task h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .task-type {
-            padding: 0.25rem 0.75rem;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--primary);
-            white-space: nowrap;
-        }
-
-        .task p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .task-actions {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .task-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .task-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .task-btn.secondary {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-        }
-
-        .task-btn.secondary:hover {
-            background: var(--border);
-        }
-
-        .task-btn i {
-            font-size: 0.85rem;
-        }
-
-        /* Animaciones */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            padding: 4rem 2rem 2rem;
-            margin-top: 6rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .footer p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header {
-                padding: 3rem 1rem 4rem;
-            }
-
-            .container {
-                padding: 2rem 1rem;
-            }
-
-            .tasks {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .task {
-                padding: 1.5rem;
-            }
-
-            .task-actions {
-                flex-direction: column;
-            }
-
-            .task-btn {
-                justify-content: center;
-                width: 100%;
-            }
-
-            .week-nav {
-                gap: 0.25rem;
-            }
-
-            .week-nav-item {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .week-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .week-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .social-links {
-                gap: 0.5rem;
-            }
-
-            .social-link {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 2rem 1rem 3rem;
-            }
-
-            .container {
-                padding: 1.5rem 0.5rem;
-            }
-
-            .task {
-                padding: 1.25rem;
-            }
-
-            .footer {
-                padding: 3rem 1rem 1.5rem;
-            }
-        }
-
-        /* Estados de carga */
-        .loading {
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        /* Mejoras de accesibilidad */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Focus states */
-        .task-btn:focus,
-        .social-link:focus,
-        .week-nav-item:focus {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
+:root {
+    /* Primary Colors: Deeper, more mature purples */
+    --primary: #5A5CF7; /* Slightly richer primary blue-purple */
+    --primary-dark: #4548E0; /* Darker for hover states */
+    --primary-light: #7E80F9; /* Softer shade for accents */
+
+    /* Secondary Color: Complementary vibrant purple */
+    --secondary: #7F58F8; /* Slightly adjusted to harmonize */
+
+    /* Accent Color: Noticeably vibrant for calls to action/highlights */
+    --accent: #00E676; /* More distinct, lively green */
+
+    /* Backgrounds: Deeper, more atmospheric dark tones */
+    --bg-primary: #0C0C1D; /* Very dark base for high contrast */
+    --bg-secondary: #16162F; /* Slightly lighter than primary, for sections */
+    --bg-card: #202040; /* Distinct dark card background */
+
+    /* Text Colors: Improved readability and vibrancy */
+    --text-primary: #E9EDF2; /* Soft white, easy on the eyes */
+    --text-secondary: #BFC9D4; /* Good contrast against dark backgrounds */
+    --text-muted: #8E9AB2; /* For subtle hints */
+
+    /* Borders & Shadows: Defined for depth and separation */
+    --border: #3A4767; /* Clearer separation */
+    --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.2); /* Small, subtle shadow */
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3); /* Medium depth */
+    --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.4); /* Pronounced for significant elements */
+    --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.45); /* Enhanced hover shadow */
+
+    /* Spacing & Sizing */
+    --radius: 10px; /* Modern, slightly less rounded */
+    --radius-lg: 18px; /* For larger elements */
+    --spacing-unit: 1rem; /* Base unit for consistent spacing */
+
+    /* Transitions: Smoother, more engaging animations */
+    --transition-fast: all 0.2s ease-out;
+    --transition-base: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smoother, slightly "springy" */
+    --transition-slow: all 0.5s ease-in-out;
+}
+
+/* Reset y base */
+*, *::before, *::after { /* Added ::before, ::after for comprehensive reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for better rem scaling */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex; /* Ensures footer sticks to bottom */
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+/* Header */
+.header {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 6rem var(--spacing-unit) 8rem; /* More generous vertical padding */
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate; /* Creates a new stacking context for ::before */
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg); /* More prominent shadow for header */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Adjusted SVG opacity and color slightly for more subtle effect */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="%23ffffff" stop-opacity=".06"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
+    background-size: cover;
+    opacity: 0.15; /* Slightly increased opacity for more presence */
+    z-index: -1; /* Ensures pattern is behind content */
+}
+
+.header-content {
+    position: relative;
+    z-index: 1; /* Ensure content is above ::before */
+    max-width: 960px; /* Wider content area */
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit); /* Padding to ensure content isn't flush on small screens */
+}
+
+.header h1 {
+    font-size: clamp(3.2rem, 6.5vw, 5rem); /* Larger, more commanding presence */
+    font-weight: 900; /* Extra bold */
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ffffff, #f0f4f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.04em; /* Tighter for a modern display look */
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced text shadow */
+}
+
+.header p {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* More prominent description */
+    font-weight: 300; /* Lighter weight for readability */
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.18); /* Slightly more opaque background */
+    backdrop-filter: blur(15px); /* Increased blur for a premium feel */
+    border: 1px solid rgba(255, 255, 255, 0.35); /* Clearer border */
+    padding: 0.9rem 2rem; /* More padding for a substantial badge */
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600; /* Bolder text for importance */
+    color: #ffffff;
+    box-shadow: var(--shadow-sm); /* Subtle shadow on badge */
+    transition: var(--transition-base);
+}
+
+.header-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* Container principal */
+.container {
+    max-width: 1280px; /* Slightly wider for modern displays */
+    margin: 0 auto;
+    padding: 5rem var(--spacing-unit); /* More vertical space */
+    flex-grow: 1; /* Pushes footer to bottom */
+}
+
+/* Navegación de semanas */
+.week-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Consistent spacing */
+    justify-content: center;
+    margin-bottom: 4.5rem; /* More space below navigation */
+    padding: 0 var(--spacing-unit);
+}
+
+.week-nav-item {
+    padding: 0.7rem 1.4rem; /* More generous padding */
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition-base);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0; /* Prevent items from shrinking too much */
+}
+
+.week-nav-item:hover,
+.week-nav-item.active {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: white;
+    transform: translateY(-4px) scale(1.03); /* More noticeable lift and scale */
+    box-shadow: var(--shadow-md);
+}
+
+/* Secciones de semanas */
+.week {
+    margin-bottom: 6rem; /* Increased vertical spacing between sections */
+    opacity: 0;
+    transform: translateY(50px); /* Larger initial Y offset for animation */
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Smoother, slightly longer animation */
+}
+
+.week:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.week:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+.week-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* More space for visual separation */
+    margin-bottom: 3rem; /* Increased space below header */
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.week-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Larger, more impactful number badge */
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: var(--shadow-md); /* Clearer shadow for the badge */
+}
+
+.week h2 {
+    font-size: clamp(2.2rem, 4vw, 2.8rem); /* Larger, more prominent heading */
+    font-weight: 800; /* Bolder */
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.02em; /* Subtle tightening */
+}
+
+/* Grid de tareas */
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); /* Slightly wider min for better content flow */
+    gap: 2.5rem; /* More breathing room between cards */
+}
+
+/* Tarjetas de tareas */
+.task {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem; /* More internal padding for a spacious feel */
+    transition: var(--transition-base);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-md); /* Consistent initial shadow */
+    display: flex; /* Use flexbox for consistent action button alignment */
+    flex-direction: column;
+}
+
+.task::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px; /* Thicker accent line */
+    background: linear-gradient(90deg, var(--primary), var(--accent)); /* Primary to accent gradient */
+    transform: scaleX(0);
+    transform-origin: left center; /* Scale from center of the left edge */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.task:hover::before {
+    transform: scaleX(1);
+}
+
+.task:hover {
+    transform: translateY(-12px); /* More significant lift on hover */
+    box-shadow: var(--shadow-lg); /* Deeper shadow on hover */
+    border-color: var(--primary-light); /* Accentuated border color on hover */
+}
+
+.task-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.5rem; /* More space below header */
+}
+
+.task h3 {
+    font-size: 1.45rem; /* Larger, more readable title */
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.7rem; /* Space between title and description */
+    line-height: 1.3; /* Tighter line height for titles */
+}
+
+.task-type {
+    padding: 0.4rem 1.1rem; /* More padding for a substantial badge */
+    background: rgba(var(--primary-light), 0.18); /* Use primary-light for a consistent color family */
+    border: 1px solid rgba(var(--primary-light), 0.45);
+    border-radius: 25px;
+    font-size: 0.85rem; /* Slightly larger for readability */
+    font-weight: 600;
+    color: var(--primary-light);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.06em; /* Increased letter spacing for professionalism */
+}
+
+.task p {
+    font-size: 1rem; /* Consistent body text size */
+    color: var(--text-secondary);
+    margin-bottom: 2rem; /* More space before actions */
+    line-height: 1.7; /* Improved line height for long text */
+    flex-grow: 1; /* Ensures content pushes buttons to the bottom */
+}
+
+.task-actions {
+    display: flex;
+    gap: 1rem; /* Increased gap */
+    flex-wrap: wrap;
+    margin-top: auto; /* Ensures actions are always at the bottom of the card */
+}
+
+.task-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Center content in button */
+    gap: 0.6rem;
+    padding: 0.9rem 1.6rem; /* More generous padding */
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: var(--transition-base);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm); /* Subtle shadow */
+}
+
+.task-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-4px); /* More pronounced lift */
+    box-shadow: var(--shadow-md);
+}
+
+.task-btn.secondary {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    box-shadow: none; /* No shadow on secondary button for visual contrast */
+}
+
+.task-btn.secondary:hover {
+    background: var(--border);
+    border-color: var(--text-muted);
+    color: var(--text-primary);
+}
+
+.task-btn i {
+    font-size: 1rem; /* Consistent icon size */
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.85; /* Slightly less dim for pulse */
+        transform: scale(1.015); /* More subtle scaling */
+    }
+}
+
+.pulse {
+    animation: pulse 2.8s infinite ease-in-out; /* Slower, more calming pulse */
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 6rem var(--spacing-unit) 3rem; /* Generous padding */
+    margin-top: 8rem; /* More vertical separation from content */
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.3); /* Distinct top shadow */
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 var(--spacing-unit);
+}
+
+.footer h3 {
+    font-size: 2.8rem; /* Larger, more impactful footer heading */
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1.8rem;
+    background: linear-gradient(45deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.footer p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8; /* Excellent readability */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* More space between icons */
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px; /* Slightly larger social icons */
+    height: 58px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-base);
+    font-size: 1.4rem; /* Larger icon size */
+    box-shadow: var(--shadow-sm);
+}
+
+.social-link:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-6px) rotate(8deg); /* More dynamic, slightly playful hover */
+    box-shadow: var(--shadow-md);
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 3rem; /* More vertical space above copyright */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 4rem var(--spacing-unit) 6rem;
+    }
+
+    .container {
+        padding: 3rem var(--spacing-unit);
+    }
+
+    .tasks {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .task {
+        padding: 2rem;
+    }
+
+    .task-actions {
+        flex-direction: column;
+    }
+
+    .task-btn {
+        width: 100%;
+    }
+
+    .week-nav {
+        gap: 0.6rem;
+    }
+
+    .week-nav-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .week-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .week-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 3rem var(--spacing-unit) 4rem;
+    }
+
+    .container {
+        padding: 2rem 0.8rem;
+    }
+
+    .task {
+        padding: 1.8rem;
+    }
+
+    .footer {
+        padding: 4rem var(--spacing-unit) 2rem;
+    }
+}
+
+/* Loading States & Accessibility */
+.loading {
+    opacity: 0.4; /* Stronger dimming to indicate loading */
+    pointer-events: none;
+    cursor: wait; /* Indicates an operation is in progress */
+    transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states (Critical for accessibility) */
+.task-btn:focus-visible, /* Use :focus-visible for better UX */
+.social-link:focus-visible,
+.week-nav-item:focus-visible {
+    outline: 4px solid var(--accent); /* Thicker, more visible outline */
+    outline-offset: 5px; /* Larger offset */
+    border-radius: var(--radius); /* Ensures outline matches element shape */
+    box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 6px var(--accent); /* Inner and outer glow */
+}
     </style>
 </head>
 <body>
